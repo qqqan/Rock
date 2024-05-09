@@ -250,8 +250,8 @@ console.log(percentage.value)
 function cut(file) {
     console.log("正在分片")
     bigFile.value = file
-    for (let i = 0; i < bigFile.value.size; i += 1024 * 1024) {
-        bigFileList.value.push(bigFile.value.slice(i, i + 1024 * 1024));
+    for (let i = 0; i < bigFile.value.size; i += 1024 * 1024 *2) {
+        bigFileList.value.push(bigFile.value.slice(i, i + 1024 * 1024 *2));
     }
     console.log("分片完成：",bigFileList.value);
     const hash = new SparkMD5.ArrayBuffer(); //构建hash值对象
